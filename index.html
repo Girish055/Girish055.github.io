@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Girish Bhagwanani | Data and Business Analyst</title>
+<meta name="description" content="Portfolio of Girish Bhagwanani, a Canberra-based data and business analyst working with Python, SQL, Power BI and Salesforce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1f3864;
+    --navy-soft: #2e4d82;
+    --ink: #16181d;
+    --ink-soft: #4a4f59;
+    --muted: #767b85;
+    --line: #e3e5ea;
+    --bg: #fbfbf9;
+    --card: #ffffff;
+    --tint: #eef2f8;
+    --orange: #d9622b;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  a { color: var(--navy); }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; color: var(--navy); line-height: 1.2; margin: 0; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(251,251,249,.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  nav .brand { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 19px; color: var(--navy); text-decoration: none; }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav ul a { text-decoration: none; color: var(--ink-soft); font-size: 14px; font-weight: 500; }
+  nav ul a:hover { color: var(--navy); }
+
+  /* Hero */
+  .hero { padding: 72px 0 56px; border-bottom: 1px solid var(--line); }
+  .hero .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(34px, 5.5vw, 54px); font-weight: 600; max-width: 760px; }
+  .hero p { font-size: 18px; color: var(--ink-soft); max-width: 680px; margin: 20px 0 28px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 6px; font-size: 15px; font-weight: 500; text-decoration: none; border: 1px solid var(--navy); }
+  .btn.primary { background: var(--navy); color: #fff; }
+  .btn.primary:hover { background: var(--navy-soft); }
+  .btn.ghost { color: var(--navy); background: transparent; }
+  .btn.ghost:hover { background: var(--tint); }
+
+  section { padding: 64px 0; border-bottom: 1px solid var(--line); }
+  .section-label { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  section > .wrap > h2 { font-size: 32px; margin-bottom: 8px; }
+  .lead { color: var(--ink-soft); max-width: 720px; margin: 0 0 32px; }
+
+  /* Featured project */
+  .featured { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 32px; }
+  .featured h3 { font-size: 26px; margin-bottom: 6px; }
+  .meta { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+  .question { border-left: 3px solid var(--navy); background: var(--tint); padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 0 0 28px; font-weight: 500; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 0 0 32px; }
+  .stat { border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; background: var(--bg); }
+  .stat .num { font-family: "Source Serif 4", Georgia, serif; font-size: 34px; font-weight: 600; color: var(--navy); line-height: 1.1; }
+  .stat .txt { font-size: 14px; color: var(--ink-soft); margin-top: 6px; }
+  h4 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); margin: 30px 0 12px; }
+
+  /* Pipeline */
+  .pipeline { display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; margin: 0 0 8px; }
+  .step { flex: 1 1 150px; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: var(--card); position: relative; }
+  .step b { display: block; font-size: 14px; color: var(--navy); }
+  .step span { font-size: 13px; color: var(--ink-soft); }
+  .step .n { position: absolute; top: -10px; left: 12px; background: var(--navy); color: #fff; font-size: 11px; font-weight: 600; border-radius: 10px; padding: 1px 7px; }
+
+  ul.clean { padding-left: 20px; margin: 0; }
+  ul.clean li { margin-bottom: 8px; }
+  .note { background: #fff8f3; border: 1px solid #f3dccd; border-radius: 8px; padding: 14px 18px; font-size: 15px; color: var(--ink-soft); }
+  .note b { color: var(--orange); }
+
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 16px; }
+  .gallery figure { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+  .gallery figcaption { font-size: 13px; color: var(--ink-soft); padding: 10px 12px; border-top: 1px solid var(--line); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 24px; }
+  .chip { font-size: 12.5px; font-weight: 500; background: var(--tint); color: var(--navy); border-radius: 999px; padding: 4px 11px; }
+
+  /* Other projects */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 24px; }
+  .card h3 { font-size: 21px; margin-bottom: 4px; }
+  .card p { margin: 10px 0 0; color: var(--ink-soft); font-size: 15px; }
+
+  /* Learning list */
+  .learning { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .learning li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .learning .t { font-weight: 500; }
+  .learning .d { color: var(--muted); font-size: 14px; }
+
+  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
+  .facts { list-style: none; margin: 0; padding: 0; font-size: 15px; }
+  .facts li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .facts b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+
+  footer { padding: 40px 0 60px; color: var(--muted); font-size: 14px; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+  @media (max-width: 720px) {
+    nav ul { gap: 14px; }
+    nav ul li.hide-sm { display: none; }
+    .featured { padding: 22px; }
+    .about { grid-template-columns: 1fr; gap: 24px; }
+    section { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Girish Bhagwanani</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li class="hide-sm"><a href="#learning">Learning</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="Girish_Bhagwanani_Resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Data and Business Analyst | Canberra</div>
+    <h1>I turn raw operational data into clear answers people can act on.</h1>
+    <p>Master of Business Informatics graduate from the University of Canberra. I work with Python, SQL, Power BI and Salesforce, and I like the part where a messy dataset finally explains what is going on.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">See my work</a>
+      <a class="btn ghost" href="Girish_Bhagwanani_Resume.pdf">Resume (PDF)</a>
+      <a class="btn ghost" href="https://github.com/Girish055">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/girishbhagwanani/">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-label">Featured project | October 2026</div>
+    <h2>NSW Electricity Market: Price and Demand</h2>
+    <p class="lead">An end-to-end analysis of two years of real 5-minute wholesale electricity data from the Australian Energy Market Operator (AEMO), covering NSW and the ACT.</p>
+
+    <article class="featured">
+      <p class="question">Question: when and why do NSW wholesale electricity prices spike, and how does demand respond to the time of day and the weather?</p>
+
+      <div class="stats">
+        <div class="stat"><div class="num">24%</div><div class="txt">of total wholesale cost came from the most expensive 1% of 5-minute intervals</div></div>
+        <div class="stat"><div class="num">10.3%</div><div class="txt">of all intervals had a negative price, rising to 27.5% on weekdays from 12 to 1pm</div></div>
+        <div class="stat"><div class="num">5 to 6pm</div><div class="txt">is the most expensive hour of a weekday, as solar output fades and households come home</div></div>
+        <div class="stat"><div class="num">13,159 MW</div><div class="txt">peak demand, on a winter weekday evening (1 July 2025), not a summer heatwave</div></div>
+      </div>
+
+      <h4>What I did</h4>
+      <div class="pipeline">
+        <div class="step"><span class="n">1</span><b>Collect</b><span>Python scripts download 24 monthly AEMO files and hourly Sydney temperature data.</span></div>
+        <div class="step"><span class="n">2</span><b>Validate</b><span>Automated checks for duplicates, gaps, missing values and out-of-range prices.</span></div>
+        <div class="step"><span class="n">3</span><b>Model</b><span>Load 210,240 intervals into SQLite, with views that fix the timestamp logic once.</span></div>
+        <div class="step"><span class="n">4</span><b>Analyse</b><span>Six SQL queries using CTEs and window functions, plus Spearman correlation in Python.</span></div>
+        <div class="step"><span class="n">5</span><b>Communicate</b><span>Charts, an interactive dashboard, a Power BI report and a one-page brief.</span></div>
+      </div>
+
+      <h4>Data quality</h4>
+      <ul class="clean">
+        <li>210,240 intervals loaded, exactly 730 days of 288 five-minute intervals, with 0 duplicates, 0 gaps and 0 missing values.</li>
+        <li>17,520 hourly temperature readings, every one matched to its market hour.</li>
+        <li>Prices ranged from the -$1,000/MWh market floor to the $20,300/MWh market cap.</li>
+      </ul>
+
+      <h4>Things I had to get right</h4>
+      <ul class="clean">
+        <li><b>Timestamps mark the end of an interval.</b> The row stamped 00:00 belongs to the previous day, so I shift every interval by five minutes in a database view before grouping by day or hour.</li>
+        <li><b>One clock for both datasets.</b> AEMO uses Australian Eastern Standard Time all year, so the weather data is requested on the same no-daylight-saving clock.</li>
+        <li><b>Volume-weighted price, not a simple average.</b> The weighted price ($111.64/MWh) is higher than the simple average ($97.47/MWh) because prices are highest when demand is highest.</li>
+        <li><b>Checking outliers, not deleting them.</b> The lowest demand in two years turned out to be a sunny summer Sunday at midday, when rooftop solar covered most household use and prices were negative.</li>
+      </ul>
+
+      <h4>An honest result</h4>
+      <p class="note"><b>Temperature was a weaker driver than expected.</b> Demand rises as it gets colder below 16&deg;C and hotter above 22&deg;C, and both effects are statistically significant, but both are weak (Spearman rho of -0.23 and 0.12). Hour by hour, time of day matters more than temperature. My next step is comparing each day's peak demand with that day's temperature extremes.</p>
+
+      <h4>Charts</h4>
+      <div class="gallery">
+        <figure><img src="images/01_monthly_trends.png" alt="Monthly volume-weighted price, spike intervals and share of negative prices" loading="lazy"><figcaption>Monthly prices, spikes and negative prices</figcaption></figure>
+        <figure><img src="images/02_daily_profile.png" alt="Average price and demand by hour, weekday vs weekend" loading="lazy"><figcaption>A typical weekday and weekend</figcaption></figure>
+        <figure><img src="images/03_negative_price_heatmap.png" alt="Heatmap of negative price share by month and hour" loading="lazy"><figcaption>When negative prices happen</figcaption></figure>
+        <figure><img src="images/05_cost_concentration.png" alt="Cumulative share of cost by most expensive intervals" loading="lazy"><figcaption>How concentrated wholesale cost is</figcaption></figure>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">SQL</span><span class="chip">SQLite</span>
+        <span class="chip">Window functions</span><span class="chip">Power BI</span><span class="chip">Plotly</span><span class="chip">Statistics</span><span class="chip">Git</span>
+      </div>
+      <div class="buttons">
+        <a class="btn primary" href="nsw-dashboard.html">Open interactive dashboard</a>
+        <a class="btn ghost" href="https://github.com/Girish055/nsw-electricity-analysis">Code on GitHub</a>
+      </div>
+    </article>
+
+    <h2 style="font-size:26px;margin:56px 0 18px">More projects</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="meta">Master's capstone | Team of 5 | 2025</div>
+        <h3>VR Reaction Time and Performance Analysis</h3>
+        <p>Evaluated a VR reaction game built by University of Canberra researchers for healthcare and rehabilitation use. Expanded the dataset from 25 to 60 participants and used t-tests to show that standing raised heart rate by about 10 BPM and slowed reaction time (4.1s vs 2.9s). Used Spearman correlation for skewed accuracy data.</p>
+        <div class="chips"><span class="chip">Statistics</span><span class="chip">Python</span><span class="chip">Research</span></div>
+      </article>
+      <article class="card">
+        <div class="meta">University of Canberra | Team of 3 | 2025</div>
+        <h3>MyWay+ Smart Transport App: Project Plan</h3>
+        <p>Project plan for an upgrade to Canberra's public transport app. Led research and requirements, built a 36-activity work breakdown structure, a 113-day schedule using PERT and Critical Path Method, a bottom-up budget of AUD 173,073, and a risk register with RACI ownership.</p>
+        <div class="chips"><span class="chip">Requirements</span><span class="chip">Microsoft Project</span><span class="chip">Risk management</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-label">2023</div>
+    <h2>Learning exercises</h2>
+    <p class="lead">Guided tutorial projects I completed while learning SQL, Tableau and Python. They follow well-known course material, so I list them as practice rather than original work.</p>
+    <ul class="learning">
+      <li><a class="t" href="https://github.com/Girish055/portfolioprojects/blob/main/Nashville%20Housing%20Data.sql">Data cleaning in SQL</a><span class="d">Nashville housing data, SQL Server</span></li>
+      <li><a class="t" href="https://github.com/Girish055/portfolioprojects/blob/main/DataExploration~vs82DB%20v1.sql">Data exploration in SQL</a><span class="d">COVID-19 dataset, MySQL</span></li>
+      <li><a class="t" href="https://public.tableau.com/app/profile/girish.bhagwanani/viz/CovidDashboard_17030795213900/Dashboard1">Tableau dashboard</a><span class="d">COVID-19 dataset</span></li>
+      <li><a class="t" href="https://github.com/Girish055/portfolioprojects/blob/main/Movie_corr_project.ipynb">Correlation analysis in Python</a><span class="d">Film budget vs gross revenue</span></li>
+      <li><a class="t" href="https://github.com/Girish055/portfolioprojects/blob/c2ae1f4c8c45f8d1b2d4f2d692b68efea3872495/Clicks%20on%20Ad%20project.ipynb">Logistic regression in Python</a><span class="d">Predicting ad clicks</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <div class="section-label">About</div>
+      <h2 style="font-size:32px;margin-bottom:16px">A bit about me</h2>
+      <p>I am based in Canberra and currently work at Telstra, where I use Salesforce and Power BI every day. Before that I was a Member Engagement Associate at Engineers Australia, building dashboards and cleaning CRM data, and a Residential Advisor at UniLodge.</p>
+      <p>At university I worked as a volunteer technical research assistant on a VR study measuring reaction times in people with dementia, which became my capstone. Outside work, I co-founded the UC Stars Running Club, which has grown to 120+ members and partnerships with LSKD, New Balance and Elite Supplements.</p>
+    </div>
+    <ul class="facts">
+      <li><b>Education</b>Master of Business Informatics, University of Canberra</li>
+      <li><b>Tools</b>Python, SQL, Power BI, Excel, Salesforce, Git</li>
+      <li><b>Analysis</b>Requirements, BPMN process mapping, statistical testing</li>
+      <li><b>Languages</b>English, Hindi, Arabic, German</li>
+    </ul>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 style="font-size:26px">Get in touch</h2>
+    <p style="color:var(--ink-soft);margin:8px 0 0">Open to data analyst and business analyst roles in Canberra and Sydney.</p>
+    <div class="contact-links">
+      <a class="btn primary" href="mailto:g09bhagwanani@gmail.com">g09bhagwanani@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/girishbhagwanani/">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/Girish055">GitHub</a>
+    </div>
+    <p style="margin-top:36px">&copy; 2026 Girish Bhagwanani</p>
+  </div>
+</footer>
+
+</body>
+</html>
